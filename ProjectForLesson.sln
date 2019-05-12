@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task9", "Task9\Task9.csproj
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_1", "Task_1\ProjectForLesson.vcxproj", "{35D133F6-5940-487D-96F0-27A1B69ACE75}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_3", "Task_3\Task_3.vcxproj", "{F344E649-0383-4699-922C-4EBAC85C76DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,16 @@ Global
 		{35D133F6-5940-487D-96F0-27A1B69ACE75}.Release|x64.Build.0 = Release|x64
 		{35D133F6-5940-487D-96F0-27A1B69ACE75}.Release|x86.ActiveCfg = Release|Win32
 		{35D133F6-5940-487D-96F0-27A1B69ACE75}.Release|x86.Build.0 = Release|Win32
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Debug|x64.ActiveCfg = Debug|x64
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Debug|x64.Build.0 = Debug|x64
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Debug|x86.ActiveCfg = Debug|Win32
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Debug|x86.Build.0 = Debug|Win32
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Release|x64.ActiveCfg = Release|x64
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Release|x64.Build.0 = Release|x64
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Release|x86.ActiveCfg = Release|Win32
+		{F344E649-0383-4699-922C-4EBAC85C76DE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

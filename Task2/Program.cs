@@ -5,12 +5,9 @@ namespace Task2
 {
     class Program
     {
-        private static int[] arrayOne = new int[6];
-        private static int[] arrayTwo = new int[8];
-
         static void Main(string[] args)
         {
-            EnterNumbers();
+            int[] commonArray = GetArray();
             OutputNumbers();
             Console.WriteLine();
         }
@@ -19,47 +16,30 @@ namespace Task2
         {
             Console.WriteLine();
 
-            int last = Int32.MinValue;
-            while (last < arrayOne[0] || last < arrayTwo[0])
-            {
-                int min = Int32.MaxValue;
-
-                for (int i = 0; i < arrayOne.Length; i++)
-                {
-                    if (arrayOne[i] < min && arrayOne[i] > last)
-                    {
-                        min = arrayOne[i];
-                    }
-                }
-
-                for (int i = 0; i < arrayTwo.Length; i++)
-                {
-                    if (arrayTwo[i] < min && arrayTwo[i] > last)
-                    {
-                        min = arrayTwo[i];
-                    }
-                }
-
-                last = min;
-                Console.Write(last + " ");
-            }
+            
         }
 
-        private static void EnterNumbers()
+        private static int[] GetArray()
         {
             Console.WriteLine("Enter numbers for one array: ");
-
-            InsertNumbersInArray(arrayOne);
+            int[] arrayOne = new int[6];
+            InsertNumbersInArray(out arrayOne);
 
             Console.WriteLine("Enter numbers for two array: ");
-            
-            InsertNumbersInArray(arrayTwo);
+            int[] arrayTwo = new int[8];
+            InsertNumbersInArray(out arrayTwo);
+
+            int[] commonArray = new int[14];
+            arrayOne.CopyTo(commonArray, 0);
+            arrayTwo.CopyTo(commonArray, 0);
+
+            return commonArray;
         }
 
-        private static void InsertNumbersInArray(int[] array)
+        private static void InsertNumbersInArray(out int[] array)
         {
            for (int i = 0; i < array.Length; i++)
-            {
+           {
                 Console.Write($"{i}:");
 
                 int numberTemp = Convert.ToInt32(Console.ReadLine());
@@ -72,7 +52,7 @@ namespace Task2
                 {
                     array[i] = numberTemp;
                 }
-            } 
+           } 
         }
     }
 }

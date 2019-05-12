@@ -81,9 +81,11 @@ namespace Task7
         /// <param name="appliances">Динамический массив с объектами бытовой техники</param>
         static void OutputFileOnConsole(List<Appliance> appliances)
         {
+            Console.WriteLine("ID\t Price \t\t Name");
+
             foreach (Appliance appliance in appliances)
             {
-                Console.WriteLine($"{appliance.iD} {appliance.price} {appliance.name}");
+                Console.WriteLine($"№{appliance.iD}\t {appliance.price} руб.\t {appliance.name}");
             }
         }
     }

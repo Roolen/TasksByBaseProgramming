@@ -11,7 +11,14 @@ namespace Task8
 
         static void Main(string[] args)
         {
-            WriteFile(ReadFile().OrderByDescending(s => s.school).ToList());
+            if (!filePath.Exists)
+            {
+                Console.WriteLine("File is not find!");
+            }
+            else
+            {
+                WriteFile(ReadFile().OrderByDescending(s => s.school).ToList());
+            }
         }
 
         static List<Student> ReadFile()
@@ -29,7 +36,7 @@ namespace Task8
                         string[] elementsLine = line.Split(new char[] {' '}, StringSplitOptions.None);
 
                         students.Add(new Student(elementsLine[0], elementsLine[1], elementsLine[2],
-                            Convert.ToInt32(elementsLine[3]), Convert.ToInt32(elementsLine[4])));
+                                Convert.ToInt32(elementsLine[3]), Convert.ToInt32(elementsLine[4])));
                     }
                 }
             }
@@ -46,7 +53,7 @@ namespace Task8
             try
             {
 
-                using (StreamWriter fileStream = new StreamWriter(File.Create(Path.Combine(filePath.DirectoryName, "Output.txt"))))
+                using (StreamWriter fileStream = new StreamWriter(File.Create(Path.Combine(filePath.DirectoryName ?? throw new Exception(), "Output.txt"))))
                 {
                     List<List<Student>> schools = new List<List<Student>>();
                     for (int i = 0, s = 0, j = -1; i < students.Count; i++)
@@ -75,6 +82,8 @@ namespace Task8
                     }
 
                     Console.WriteLine("Преобразование файла прошло успешно");
+
+                    OutputFileInConsole(students);
                 }
             }
             catch (Exception error)
